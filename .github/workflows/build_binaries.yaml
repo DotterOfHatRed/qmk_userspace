@@ -7,8 +7,54 @@ permissions:
 
 jobs:
   build:
-    name: QMK Userspace ${{ github.actor }}
+    name: 'QMK Userspace: tzarc'
     uses: qmk/.github/.github/workflows/qmk_userspace_build.yml@qmk-userspace
     with:
       qmk_repo: qmk/qmk_firmware
       qmk_ref: master
+      keymap_name: tzarc
+      perform_publish: false
+
+  build_c:
+    name: 'QMK Userspace: tzarc_c'
+    uses: qmk/.github/.github/workflows/qmk_userspace_build.yml@qmk-userspace
+    with:
+      qmk_repo: qmk/qmk_firmware
+      qmk_ref: master
+      keymap_name: tzarc_c
+      perform_publish: false
+
+  build_json:
+    name: 'QMK Userspace: tzarc_json'
+    uses: qmk/.github/.github/workflows/qmk_userspace_build.yml@qmk-userspace
+    with:
+      qmk_repo: qmk/qmk_firmware
+      qmk_ref: master
+      keymap_name: tzarc_json
+      perform_publish: false
+
+  publish:
+    name: Publish
+    if: always() && !cancelled()
+    needs: [build, build_c, build_json]
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Download binaries
+      if: always() && !cancelled()
+      uses: actions/download-artifact@v3
+
+    - name: Generate Release
+      uses: softprops/action-gh-release@v1
+      if: always() && !cancelled()
+      with:
+        token: ${{ github.token }}
+        name: Latest Firmware
+        tag_name: latest
+        fail_on_unmatched_files: false
+        draft: false
+        prerelease: false
+        files: |
+          **/*.hex
+          **/*.bin
+          **/*.uf2
