@@ -12,3 +12,19 @@ jobs:
     with:
       qmk_repo: qmk/qmk_firmware
       qmk_ref: master
+
+  build_c:
+    name: QMK Userspace tzarc_c
+    uses: qmk/.github/.github/workflows/qmk_userspace_build.yml@qmk-userspace
+    with:
+      qmk_repo: qmk/qmk_firmware
+      qmk_ref: master
+      keymap_name: tzarc_c
+
+  build_json:
+    name: QMK Userspace tzarc_json
+    uses: qmk/.github/.github/workflows/qmk_userspace_build.yml@qmk-userspace
+    with:
+      qmk_repo: qmk/qmk_firmware
+      qmk_ref: master
+      keymap_name: tzarc_json
