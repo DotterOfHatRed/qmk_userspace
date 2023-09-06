@@ -7,11 +7,12 @@ This is an experimental repository which allows for an external set of QMK keyma
 ## Howto build with GitHub
 
 1. Fork this repository
-2. Add your keymap to the `keyboards` directory, in the same location that would normally be used in the main QMK repository. For example, if you wanted to add a keymap for the Planck, you would add it to `keyboards/planck/keymaps/<your keymap name>/keymap.c` or `keyboards/planck/keymaps/<your keymap name>/keymap.json`, depending on the type of keymap you have.
-3. Commit your changes
-4. Look at the GitHub Actions for a new actions run
-5. Wait for the actions run to complete
-6. Inspect the Releases tab on your repository for the latest firmware build
+2. In the GitHub Actions tab, enable workflows
+3. Add your keymap to the `keyboards` directory, in the same location that would normally be used in the main QMK repository. For example, if you wanted to add a keymap for the Planck, you would add it to `keyboards/planck/keymaps/<your keymap name>/keymap.c` or `keyboards/planck/keymaps/<your keymap name>/keymap.json`, depending on the type of keymap you have.
+4. Commit your changes
+5. Look at the GitHub Actions for a new actions run
+6. Wait for the actions run to complete
+7. Inspect the Releases tab on your repository for the latest firmware build
 
 ## Howto build locally
 
