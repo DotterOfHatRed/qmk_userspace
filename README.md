@@ -4,6 +4,8 @@ This is an experimental repository which allows for an external set of QMK keyma
 
 ## Howto configure your build targets
 
+**For the moment, this procedure will only work if you've got the `qmk-userspace` branch of `qmk_firmware` checked out. Once merged to `master`, this becomes generally available.**
+
 1. Fork this repository
 1. Clone your fork
 1. Add your keymap to the `keyboards` directory, in the same location that would normally be used in the main QMK repository. For example, if you wanted to add a keymap for the Planck, you would add it to `keyboards/planck/keymaps/<your keymap name>/keymap.c` or `keyboards/planck/keymaps/<your keymap name>/keymap.json`, depending on the type of keymap you have.
