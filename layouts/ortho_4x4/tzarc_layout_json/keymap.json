@@ -2,6 +2,7 @@
     "version": 1,
     "notes": "",
     "documentation": "",
+    "keyboard": "jj4x4",
     "keymap": "tzarc_layout_json",
     "layout": "LAYOUT_ortho_4x4",
     "layers": [
