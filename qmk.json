@@ -3,6 +3,8 @@
     "build_targets": [
         ["all", "tzarc"],
         ["all", "tzarc_c"],
+        "bm16s.json",
+        "testpath/bm16s.json",
         ["all", "tzarc_json"]
     ]
 }
